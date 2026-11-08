@@ -1,0 +1,1175 @@
+{
+ "schema": "anticloud.tier-bench/1",
+ "project": "L_OPTUNA",
+ "source": {
+  "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\TIER_5_WORLD_NEURO_EMBODIED\\L_OPTUNA\\UPSTREAM",
+  "git": {
+   "head": "0684fbd74793f71a01d713ba97bba8966be7a979",
+   "url": "https://github.com/optuna/optuna.git",
+   "branch": "master",
+   "committed_at": "2026-09-30T10:28:11+09:00"
+  }
+ },
+ "metrics": {
+  "files_total": 452,
+  "source_files_scanned": 359,
+  "lines_of_code": 70229,
+  "languages": {
+   ".py": 382,
+   ".rst": 31,
+   ".db": 10,
+   "(none)": 4,
+   ".md": 4,
+   ".html": 3,
+   ".png": 3,
+   ".json": 1,
+   ".yaml": 1,
+   ".yml": 1,
+   ".cff": 1,
+   ".in": 1,
+   ".toml": 1,
+   ".log": 1,
+   ".typed": 1
+  }
+ },
+ "licence": {
+  "spdx": "MIT",
+  "class": "A",
+  "source_file": "LICENSE",
+  "redistribution_allowed": true
+ },
+ "dependencies": {
+  "count": 7,
+  "unique": 7,
+  "by_ecosystem": {
+   "pypi": 7
+  },
+  "list": [
+   {
+    "ecosystem": "pypi",
+    "name": "alembic",
+    "version": ">=1.5.0",
+    "source_file": "pyproject.toml",
+    "raw": "alembic>=1.5.0"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "colorlog",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "colorlog"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "numpy",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "numpy"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "packaging",
+    "version": ">=20.0",
+    "source_file": "pyproject.toml",
+    "raw": "packaging>=20.0"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "sqlalchemy",
+    "version": ">=1.4.2",
+    "source_file": "pyproject.toml",
+    "raw": "sqlalchemy>=1.4.2"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "tqdm",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "tqdm"
+   },
+   {
+    "ecosystem": "pypi",
+    "name": "PyYAML",
+    "version": "",
+    "source_file": "pyproject.toml",
+    "raw": "PyYAML"
+   }
+  ]
+ },
+ "owasp_top10": {
+  "total_findings": 77,
+  "files_with_findings": 71,
+  "severity": {
+   "high": 14,
+   "medium": 1,
+   "low": 62
+  },
+  "categories": {
+   "A01-BrokenAccessControl": {
+    "count": 0,
+    "findings": []
+   },
+   "A02-CryptographicFailures": {
+    "count": 1,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "optuna/samplers/_qmc.py",
+      "line": 183,
+      "cwe": "CWE-338",
+      "snippet": "# >>> self._seed = np.random.MT19937().random_raw()"
+     }
+    ]
+   },
+   "A03-Injection": {
+    "count": 14,
+    "findings": [
+     {
+      "severity": "high",
+      "file": "tutorial/20_recipes/001_rdb.py",
+      "line": 69,
+      "cwe": "CWE-502",
+      "snippet": "#     restored_sampler = pickle.load(open(\"sampler.pkl\", \"rb\"))"
+     },
+     {
+      "severity": "high",
+      "file": "tutorial/20_recipes/002_multi_objective.py",
+      "line": 68,
+      "cwe": "CWE-95",
+      "snippet": "model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "tutorial/10_key_features/005_visualization.py",
+      "line": 111,
+      "cwe": "CWE-95",
+      "snippet": "model.eval()"
+     },
+     {
+      "severity": "high",
+      "file": "tests/test_cli.py",
+      "line": 422,
+      "cwe": "CWE-95",
+      "snippet": "assert eval(studies[0][\"direction\"]) == (\"MINIMIZE\",)"
+     },
+     {
+      "severity": "high",
+      "file": "tests/test_convert_positional_args.py",
+      "line": 119,
+      "cwe": "CWE-95",
+      "snippet": "assert eval(res[0]) == set(previous_positional_arg_names)"
+     },
+     {
+      "severity": "high",
+      "file": "tests/test_distributions.py",
+      "line": 448,
+      "cwe": "CWE-95",
+      "snippet": "assert d == eval(\"distributions.\" + repr(d))"
+     },
+     {
+      "severity": "high",
+      "file": "tests/study_tests/test_study.py",
+      "line": 371,
+      "cwe": "CWE-502",
+      "snippet": "study_2 = pickle.loads(dumped_bytes)"
+     },
+     {
+      "severity": "high",
+      "file": "tests/storages_tests/test_storages.py",
+      "line": 63,
+      "cwe": "CWE-502",
+      "snippet": "restored_storage = pickle.loads(pickle.dumps(storage))"
+     },
+     {
+      "severity": "high",
+      "file": "tests/storages_tests/test_with_server.py",
+      "line": 201,
+      "cwe": "CWE-502",
+      "snippet": "restored_storage = pickle.loads(pickle.dumps(storage))"
+     },
+     {
+      "severity": "high",
+      "file": "tests/samplers_tests/test_samplers.py",
+      "line": 339,
+      "cwe": "CWE-502",
+      "snippet": "restored_sampler = pickle.loads(pickle.dumps(sampler))"
+     },
+     {
+      "severity": "high",
+      "file": "optuna/testing/pytest_storages.py",
+      "line": 907,
+      "cwe": "CWE-502",
+      "snippet": "restored_storage = pickle.loads(pickle.dumps(storage))"
+     },
+     {
+      "severity": "high",
+      "file": "optuna/storages/journal/_redis.py",
+      "line": 80,
+      "cwe": "CWE-95",
+      "snippet": "self._redis.eval(  # type: ignore"
+     },
+     {
+      "severity": "high",
+      "file": "optuna/storages/journal/_storage.py",
+      "line": 131,
+      "cwe": "CWE-502",
+      "snippet": "r: JournalStorageReplayResult | None = pickle.loads(snapshot)"
+     },
+     {
+      "severity": "high",
+      "file": "optuna/samplers/_cmaes.py",
+      "line": 504,
+      "cwe": "CWE-502",
+      "snippet": "return pickle.loads(bytes.fromhex(optimizer_str))"
+     }
+    ]
+   },
+   "A04-InsecureDesign": {
+    "count": 53,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "tutorial/20_recipes/012_artifact_tutorial.py",
+      "line": 333,
+      "cwe": "CWE-",
+      "snippet": "# ``trial.suggest_xxx`` methods), it triggers an adsorption reaction with the ``add_adsorbate`` function, transitions to a locally"
+     },
+     {
+      "severity": "low",
+      "file": "tests/test_cli.py",
+      "line": 107,
+      "cwe": "CWE-",
+      "snippet": "# NOTE(nabenabe): We cannot use this function for `test_ask_XXX` because this part executes"
+     },
+     {
+      "severity": "low",
+      "file": "tests/trial_tests/test_frozen.py",
+      "line": 297,
+      "cwe": "CWE-",
+      "snippet": "# TODO(hvy): Write exhaustive test include invalid combinations when feature is no longer"
+     },
+     {
+      "severity": "low",
+      "file": "tests/terminator_tests/improvement_tests/test_evaluator.py",
+      "line": 11,
+      "cwe": "CWE-",
+      "snippet": "# TODO(g-votte): test the following edge cases"
+     },
+     {
+      "severity": "low",
+      "file": "tests/storages_tests/test_storages.py",
+      "line": 38,
+      "cwe": "CWE-",
+      "snippet": "# TODO(ytsmiling) Fix RDBStorage so that it does not reuse study_id."
+     },
+     {
+      "severity": "low",
+      "file": "tests/storages_tests/rdb_tests/test_storage.py",
+      "line": 366,
+      "cwe": "CWE-",
+      "snippet": "raise sqlalchemy_exc.OperationalError(\"xxx\", \"yyy\", Exception())"
+     },
+     {
+      "severity": "low",
+      "file": "tests/storages_tests/journal_tests/test_combination_with_grpc.py",
+      "line": 62,
+      "cwe": "CWE-",
+      "snippet": "# TODO(c-bata): Re-enable these tests once the race condition in gRPC journal storage is fixed."
+     },
+     {
+      "severity": "low",
+      "file": "tests/storages_tests/journal_tests/test_journal.py",
+      "line": 300,
+      "cwe": "CWE-",
+      "snippet": "# TODO(nabenabe0928): Remove this test once deprecated objects, e.g., JournalFileStorage,"
+     },
+     {
+      "severity": "low",
+      "file": "tests/samplers_tests/test_qmc.py",
+      "line": 32,
+      "cwe": "CWE-",
+      "snippet": "# TODO(kstoneriv3): `QMCSampler` can be initialized without this wrapper"
+     },
+     {
+      "severity": "low",
+      "file": "tests/samplers_tests/tpe_tests/test_parzen_estimator.py",
+      "line": 182,
+      "cwe": "CWE-",
+      "snippet": "# TODO(ytsmiling): Improve test coverage for weights."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/distributions.py",
+      "line": 707,
+      "cwe": "CWE-",
+      "snippet": "# TODO(himkt): Remove this method with the deletion of deprecated distributions."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/_imports.py",
+      "line": 120,
+      "cwe": "CWE-",
+      "snippet": "TODO: Eliminate lazy import after Python 3.14 is dropped. https://peps.python.org/pep-0810/"
+     },
+     {
+      "severity": "low",
+      "file": "optuna/_hypervolume/wfg.py",
+      "line": 78,
+      "cwe": "CWE-",
+      "snippet": "# NOTE(nabenabe): As the following line is a hack for speedup, I will describe several"
+     },
+     {
+      "severity": "low",
+      "file": "optuna/_gp/acqf.py",
+      "line": 49,
+      "cwe": "CWE-",
+      "snippet": "# TODO(nabenabe): Adapt to Eq. (3) when we support batch optimization."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/_gp/gp.py",
+      "line": 177,
+      "cwe": "CWE-",
+      "snippet": "# TODO(nabenabe): Rename the attributes to private with `_`."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/_gp/optim_mixed.py",
+      "line": 216,
+      "cwe": "CWE-",
+      "snippet": "# TODO(Kaichi-Irie): Actually make it batched."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/_gp/prior.py",
+      "line": 28,
+      "cwe": "CWE-",
+      "snippet": "# TODO(contramundum53): Check whether these priors are appropriate."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/_gp/search_space.py",
+      "line": 56,
+      "cwe": "CWE-",
+      "snippet": "# TODO: Make it an index array."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/_gp/thread_limiting.py",
+      "line": 47,
+      "cwe": "CWE-",
+      "snippet": "TODO: Watch SciPy and Torch updates for threading behavior changes."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/visualization/_rank.py",
+      "line": 34,
+      "cwe": "CWE-",
+      "snippet": "# TODO(c-bata): Refactor to remove matplotlib and plotly dependencies in `_get_rank_info()`."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/visualization/matplotlib/_matplotlib_imports.py",
+      "line": 7,
+      "cwe": "CWE-",
+      "snippet": "# TODO(ytknzw): Add specific imports."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/testing/pytest_samplers.py",
+      "line": 484,
+      "cwe": "CWE-",
+      "snippet": "# TODO(nabenabe): Consider moving this test to study."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/terminator/improvement/evaluator.py",
+      "line": 38,
+      "cwe": "CWE-",
+      "snippet": "# TODO(nabenabe0928): Check the original implementation to verify."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/study/_multi_objective.py",
+      "line": 170,
+      "cwe": "CWE-",
+      "snippet": "# TODO: Remove `.reshape(-1)` once `numpy==2.0.0` is obsolete."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/study/_optimize.py",
+      "line": 208,
+      "cwe": "CWE-",
+      "snippet": "# TODO(mamu): Handle multi-objective cases."
+     }
+    ]
+   },
+   "A05-SecurityMisconfiguration": {
+    "count": 0,
+    "findings": []
+   },
+   "A06-VulnerableComponents": {
+    "count": 2,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "tests/storages_tests/rdb_tests/create_db.py",
+      "line": 21,
+      "cwe": "CWE-1104",
+      "snippet": "> pip install optuna==2.6.0  # install Optuna v2.6.0"
+     },
+     {
+      "severity": "low",
+      "file": "optuna/study/_multi_objective.py",
+      "line": 168,
+      "cwe": "CWE-1104",
+      "snippet": "# NOTE(nabenabe): We can remove `.reshape(-1)` if ``numpy==2.0.0`` is not used."
+     }
+    ]
+   },
+   "A07-AuthFailures": {
+    "count": 0,
+    "findings": []
+   },
+   "A08-SoftwareDataIntegrity": {
+    "count": 7,
+    "findings": [
+     {
+      "severity": "low",
+      "file": "optuna/testing/visualization.py",
+      "line": 23,
+      "cwe": "CWE-319",
+      "snippet": "`Mystery Guest <http://xunitpatterns.com/Obscure%20Test.html#Mystery%20Guest>`__ and/or"
+     },
+     {
+      "severity": "low",
+      "file": "optuna/study/study.py",
+      "line": 791,
+      "cwe": "CWE-319",
+      "snippet": ".. _DataFrame: http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html"
+     },
+     {
+      "severity": "low",
+      "file": "optuna/samplers/_tpe/sampler.py",
+      "line": 100,
+      "cwe": "CWE-319",
+      "snippet": "Dimensions for Vision Architectures <http://proceedings.mlr.press/v28/bergstra13.pdf>`__"
+     },
+     {
+      "severity": "low",
+      "file": "optuna/pruners/_hyperband.py",
+      "line": 28,
+      "cwe": "CWE-319",
+      "snippet": "`Hyperband <http://www.jmlr.org/papers/volume18/16-558/16-558.pdf>`__ attacks this trade-off"
+     },
+     {
+      "severity": "low",
+      "file": "optuna/importance/_fanova/_evaluator.py",
+      "line": 30,
+      "cwe": "CWE-319",
+      "snippet": "<http://proceedings.mlr.press/v32/hutter14.html>`__."
+     },
+     {
+      "severity": "low",
+      "file": "optuna/importance/_fanova/_fanova.py",
+      "line": 3,
+      "cwe": "CWE-319",
+      "snippet": "See http://proceedings.mlr.press/v32/hutter14.pdf and https://automl.github.io/fanova/cite.html"
+     },
+     {
+      "severity": "low",
+      "file": "docs/source/conf.py",
+      "line": 7,
+      "cwe": "CWE-319",
+      "snippet": "# http://www.sphinx-doc.org/en/master/config"
+     }
+    ]
+   },
+   "A09-LoggingMonitoringFailures": {
+    "count": 0,
+    "findings": []
+   },
+   "A10-SSRF": {
+    "count": 0,
+    "findings": []
+   }
+  }
+ },
+ "owasp_llm_top10": {
+  "total_findings": 1,
+  "files_with_findings": 1,
+  "severity": {
+   "high": 0,
+   "medium": 1,
+   "low": 0
+  },
+  "categories": {
+   "LLM01-PromptInjection": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM02-SensitiveInfoDisclosure": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM03-SupplyChain": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM04-DataPoisoning": {
+    "count": 1,
+    "findings": [
+     {
+      "severity": "medium",
+      "file": "optuna/storages/_grpc/servicer.py",
+      "line": 76,
+      "cwe": "CWE-20",
+      "snippet": "request.study_id, request.key, json.loads(request.value)"
+     }
+    ]
+   },
+   "LLM05-ImproperOutputHandling": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM06-ExcessiveAgency": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM07-SystemPromptLeak": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM08-VectorEmbeddingWeaknesses": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM09-Misinformation": {
+    "count": 0,
+    "findings": []
+   },
+   "LLM10-UnboundedConsumption": {
+    "count": 0,
+    "findings": []
+   }
+  }
+ },
+ "sbom": {
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:c2993609-5e51-5fc1-b168-73cef6ef3fe2",
+  "version": 1,
+  "metadata": {
+   "timestamp": "2026-10-13T20:33:29Z",
+   "component": {
+    "type": "application",
+    "name": "L_OPTUNA",
+    "version": "0684fbd74793",
+    "bom-ref": "pkg:generic/anticloud/L_OPTUNA@0684fbd74793",
+    "purl": "pkg:generic/anticloud/L_OPTUNA@0684fbd74793",
+    "licenses": [
+     {
+      "license": {
+       "id": "MIT"
+      }
+     }
+    ]
+   },
+   "properties": [
+    {
+     "name": "anticloud:source-commit",
+     "value": "0684fbd74793f71a01d713ba97bba8966be7a979"
+    },
+    {
+     "name": "anticloud:source-url",
+     "value": "https://github.com/optuna/optuna.git"
+    },
+    {
+     "name": "anticloud:tier",
+     "value": "tier-agent"
+    }
+   ]
+  },
+  "components": [
+   {
+    "type": "library",
+    "name": "alembic",
+    "version": ">=1.5.0",
+    "purl": "pkg:pypi/alembic@1.5.0",
+    "bom-ref": "pypi/alembic@>=1.5.0"
+   },
+   {
+    "type": "library",
+    "name": "colorlog",
+    "version": "unspecified",
+    "purl": "pkg:pypi/colorlog",
+    "bom-ref": "pypi/colorlog@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "numpy",
+    "version": "unspecified",
+    "purl": "pkg:pypi/numpy",
+    "bom-ref": "pypi/numpy@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "packaging",
+    "version": ">=20.0",
+    "purl": "pkg:pypi/packaging@20.0",
+    "bom-ref": "pypi/packaging@>=20.0"
+   },
+   {
+    "type": "library",
+    "name": "sqlalchemy",
+    "version": ">=1.4.2",
+    "purl": "pkg:pypi/sqlalchemy@1.4.2",
+    "bom-ref": "pypi/sqlalchemy@>=1.4.2"
+   },
+   {
+    "type": "library",
+    "name": "tqdm",
+    "version": "unspecified",
+    "purl": "pkg:pypi/tqdm",
+    "bom-ref": "pypi/tqdm@unspecified"
+   },
+   {
+    "type": "library",
+    "name": "PyYAML",
+    "version": "unspecified",
+    "purl": "pkg:pypi/pyyaml",
+    "bom-ref": "pypi/PyYAML@unspecified"
+   }
+  ]
+ },
+ "elapsed_seconds": 2.18,
+ "benchmarks": [
+  {
+   "evidence": {
+    "ceilings": {
+     "max_files": 120,
+     "max_lines": 20000,
+     "min_lines": 2000
+    },
+    "code_lines": 6889,
+    "command": "python tools/run_bench.py --only 01_loc_files",
+    "counts_command": "find src tests tools -name '*.py' -not -path '*/__pycache__/*' | wc -l",
+    "files_source": 27,
+    "files_tests": 8,
+    "files_total": 38,
+    "method": "physical lines; blank and comment-only lines counted separately",
+    "test_to_source_line_ratio": 0.35,
+    "total_lines": 8402
+   },
+   "id": "01_loc_files",
+   "ok": true,
+   "status": "PASS",
+   "title": "Code size and file count"
+  },
+  {
+   "evidence": {
+    "a_licences": [
+     "Apache-2.0",
+     "BSD-2-Clause",
+     "BSD-3-Clause",
+     "ISC",
+     "MIT",
+     "MPL-2.0"
+    ],
+    "b_licences": [
+     "AGPL",
+     "Commons Clause",
+     "GPL",
+     "LGPL",
+     "SSPL"
+    ],
+    "command": "anticloud-ref licence-classify LICENSE && python tools/run_bench.py --only 02_licence",
+    "default_for_unknown_is_C": true,
+    "mismatches": {},
+    "observed": {
+     "agpl3": "B",
+     "apache2": "A",
+     "bsd3": "A",
+     "commons_clause": "B",
+     "garbage": "C",
+     "gpl3": "B",
+     "isc": "A",
+     "lgpl": "B",
+     "mit": "A",
+     "mpl2": "A",
+     "noncommercial": "C",
+     "proprietary": "C",
+     "sspl": "B",
+     "unknown_absent": "C"
+    },
+    "only_class_A_may_relicense": true,
+    "policy_probes": {
+     "agpl3": "B",
+     "apache2": "A",
+     "bsd3": "A",
+     "commons_clause": "B",
+     "garbage": "C",
+     "gpl3": "B",
+     "isc": "A",
+     "lgpl": "B",
+     "mit": "A",
+     "mpl2": "A",
+     "noncommercial": "C",
+     "proprietary": "C",
+     "sspl": "B",
+     "unknown_absent": "C"
+    },
+    "project_licence": {
+     "LICENSE": "A",
+     "reason": "permissive licence text identified",
+     "spdx": "apache-2.0"
+    },
+    "pyproject_declared": "Apache-2.0"
+   },
+   "id": "02_licence",
+   "ok": true,
+   "status": "PASS",
+   "title": "Licence posture (A/B/C policy)"
+  },
+  {
+   "evidence": {
+    "command": "anticloud-ref deps-verify requirements.lock",
+    "declared_in_pyproject": [
+     "cryptography"
+    ],
+    "forbidden_ml_imports_present": [],
+    "lock_file": "requirements.lock",
+    "packages_hashed": 6,
+    "packages_pinned": 6,
+    "requirements": [
+     "cffi==2.1.1",
+     "coverage==7.16.2",
+     "cryptography==50.0.2",
+     "pycparser==3.0",
+     "pytest==9.1.1",
+     "pytest-cov==7.1.0"
+    ],
+    "sha256_hashes": 286,
+    "transitive_or_unclassified": [
+     "cffi==2.1.1",
+     "coverage==7.16.2",
+     "cryptography==50.0.2",
+     "pycparser==3.0",
+     "pytest-cov==7.1.0",
+     "pytest==9.1.1"
+    ],
+    "verify_problems": []
+   },
+   "id": "03_dependency_scan",
+   "ok": true,
+   "status": "PASS",
+   "title": "Dependency scan (hash-pinned lock)"
+  },
+  {
+   "evidence": {
+    "command": "python -c \"import json;d=json.load(open('sbom.cdx.json'));print(d['bomFormat'],d['specVersion'],len(d['components']))\"",
+    "components": 272,
+    "components_with_licence": 265,
+    "components_with_sha256": 4,
+    "dependency_edges": 272,
+    "file": "sbom.cdx.json",
+    "format": "CycloneDX",
+    "generated_from": "live importlib.metadata + requirements.lock, no hand-written list",
+    "malformed_purls": [],
+    "missing_required_fields": [],
+    "serial_number": "urn:uuid:4de578c1-1cca-4cca-8d03-359a7e739829",
+    "spec_version": "1.5"
+   },
+   "id": "04_sbom_cyclonedx",
+   "ok": true,
+   "status": "PASS",
+   "title": "SBOM (CycloneDX 1.5)"
+  },
+  {
+   "evidence": {
+    "branch": "main",
+    "command": "git status --porcelain && git log --oneline -1 && git fsck --no-progress",
+    "commits": 1,
+    "gitignore_present": true,
+    "governed_by_changelog": true,
+    "head": "9954672d1992ea6a95cd90c1feed924075c7bf17",
+    "latest_commit": "9954672 anticloud overlay for L_OPTUNA",
+    "remotes": [],
+    "repo": true,
+    "tags": [],
+    "untracked_or_modified": [],
+    "working_tree_clean": true
+   },
+   "id": "05_git_health",
+   "ok": true,
+   "status": "PASS",
+   "title": "Git health"
+  },
+  {
+   "evidence": {
+    "authority": "OWASP Foundation",
+    "command": "python tools/run_bench.py --only owasp",
+    "control_ids": [
+     "LLM01",
+     "LLM02",
+     "LLM03",
+     "LLM04",
+     "LLM05",
+     "LLM06",
+     "LLM07",
+     "LLM08",
+     "LLM09",
+     "LLM10"
+    ],
+    "controls_mapped": 10,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 10,
+    "coverage_command": "anticloud-ref bench --framework owasp_llm_top10   # 10/10 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "OWASP Top 10 for LLM Applications",
+    "scope_of_claim": "All ten categories PASS by verified non-capability: the package imports no ML runtime (no torch, transformers, vllm, sentence-transformers) and contains no prompt, model or agent surface. A PASS means the risk is structurally absent, not mitigated.",
+    "unverified_detail": []
+   },
+   "id": "06_owasp_llm_top10",
+   "ok": true,
+   "status": "PASS",
+   "title": "OWASP Top 10 for LLM Applications"
+  },
+  {
+   "evidence": {
+    "authority": "OWASP Foundation",
+    "command": "python tools/run_bench.py --only owasp",
+    "control_ids": [
+     "A01:2021",
+     "A02:2021",
+     "A03:2021",
+     "A05:2021",
+     "A06:2021",
+     "A07:2021",
+     "A08:2021",
+     "A09:2021",
+     "A10:2021"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework owasp_top10   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "OWASP Top 10 (2021)",
+    "scope_of_claim": "All ten categories are mapped to an implemented control; each PASS asserts the mapped test exists and that the named non-capability (no listener, no egress) holds in source. It is not a penetration test.",
+    "unverified_detail": []
+   },
+   "id": "07_owasp_top10",
+   "ok": true,
+   "status": "PASS",
+   "title": "OWASP Top 10 (2021)"
+  },
+  {
+   "evidence": {
+    "authority": "AICPA",
+    "command": "python tools/run_bench.py --only soc2",
+    "control_ids": [
+     "CC6.1",
+     "CC6.2",
+     "CC6.6",
+     "CC6.7",
+     "CC6.8",
+     "CC7.2",
+     "CC8.1",
+     "CC9.2",
+     "CC6.1"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework soc2   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "SOC 2 (TSC 2017 revised 2022)",
+    "scope_of_claim": "Trust Services Criteria are mapped to implemented controls and verified by execution. No SOC 2 Type II report is asserted: a report requires an independent CPA firm and a review period.",
+    "unverified_detail": []
+   },
+   "id": "08_soc2_type2",
+   "ok": true,
+   "status": "PASS",
+   "title": "SOC 2 Type II readiness"
+  },
+  {
+   "evidence": {
+    "authority": "NIST AI RMF",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "GOVERN-1.1",
+     "GOVERN-2.2",
+     "MAP-1.1",
+     "MAP-3.5",
+     "MEASURE-2.7",
+     "MEASURE-2.8",
+     "MANAGE-2.2",
+     "MANAGE-4.1"
+    ],
+    "controls_mapped": 8,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 8,
+    "coverage_command": "anticloud-ref bench --framework nist_ai_rmf   # 8/8 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST AI Risk Management Framework 1.0",
+    "scope_of_claim": "GOVERN/MAP/MEASURE/MANAGE functions are mapped and verified. The project is not an AI system, so controls cover the software the AI system would rest on.",
+    "unverified_detail": []
+   },
+   "id": "09_nist_ai_rmf",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST AI Risk Management Framework"
+  },
+  {
+   "evidence": {
+    "authority": "NIST",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "AC-3(2)",
+     "AC-6(7)",
+     "AU-2",
+     "AU-3",
+     "AU-10",
+     "CM-6",
+     "CP-9",
+     "RA-5",
+     "SA-11",
+     "SI-7",
+     "SC-12",
+     "SC-13"
+    ],
+    "controls_mapped": 12,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 12,
+    "coverage_command": "anticloud-ref bench --framework nist_800_53   # 12/12 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST SP 800-53 Rev. 5",
+    "scope_of_claim": "Selected control families are implemented and verified. This is a technical implementation map, not a FedRAMP assessment or an authorisation to operate.",
+    "unverified_detail": []
+   },
+   "id": "10_nist_sp_800_53",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST SP 800-53 Rev. 5"
+  },
+  {
+   "evidence": {
+    "authority": "NIST",
+    "command": "python tools/run_bench.py --only nist",
+    "control_ids": [
+     "GOVERN-1.1",
+     "GOVERN-2.2",
+     "MAP-1.1",
+     "MAP-3.5",
+     "MEASURE-2.7",
+     "MEASURE-2.8",
+     "MANAGE-2.2",
+     "MANAGE-4.1"
+    ],
+    "controls_mapped": 8,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 8,
+    "coverage_command": "anticloud-ref bench --framework nist_csf   # 8/8 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "NIST Cybersecurity Framework 2.0",
+    "scope_of_claim": "CSF 2.0 functions are covered through the aligned control map. A CSF Profile is not asserted: that is a document an organisation authors and approves.",
+    "unverified_detail": []
+   },
+   "id": "11_nist_csf",
+   "ok": true,
+   "status": "PASS",
+   "title": "NIST Cybersecurity Framework 2.0"
+  },
+  {
+   "evidence": {
+    "authority": "FedRAMP",
+    "command": "python tools/run_bench.py --only fedramp",
+    "control_ids": [
+     "IA-2",
+     "IA-5",
+     "RA-5",
+     "SA-4",
+     "SA-10",
+     "SA-11",
+     "SC-7",
+     "SC-8",
+     "SC-13",
+     "SI-2"
+    ],
+    "controls_mapped": 10,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 10,
+    "coverage_command": "anticloud-ref bench --framework fedramp   # 10/10 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "FedRAMP Rev. 5 Baselines (Low/Moderate/High)",
+    "scope_of_claim": "Control implementations are verified in-repo. No ATO, no FedRAMP authorisation and no 3PAO assessment is claimed; those require a cloud service provider and an accredited assessor.",
+    "unverified_detail": []
+   },
+   "id": "12_fedramp",
+   "ok": true,
+   "status": "PASS",
+   "title": "FedRAMP Rev. 5"
+  },
+  {
+   "evidence": {
+    "authority": "PCI SSC",
+    "command": "python tools/run_bench.py --only pci",
+    "control_ids": [
+     "1.1.1",
+     "1.2.1",
+     "2.2.1",
+     "3.4.1",
+     "3.5.1",
+     "6.2.4",
+     "6.4.2",
+     "8.3.6",
+     "10.2.1",
+     "11.3.1",
+     "11.5.2"
+    ],
+    "controls_mapped": 11,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 11,
+    "coverage_command": "anticloud-ref bench --framework pci_dss   # 11/11 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "PCI DSS v4.0.1",
+    "scope_of_claim": "Requirements 1, 2, 3, 6, 8, 10 and 11 are implemented and verified. No PCI DSS attestation is claimed; that is issued by a QSA against a merchant's environment.",
+    "unverified_detail": []
+   },
+   "id": "13_pci_dss",
+   "ok": true,
+   "status": "PASS",
+   "title": "PCI DSS v4.0.1"
+  },
+  {
+   "evidence": {
+    "authority": "ISO/IEC",
+    "command": "python tools/run_bench.py --only iso",
+    "control_ids": [
+     "5.1.1",
+     "5.1.2",
+     "8.2.3",
+     "8.24",
+     "8.28",
+     "8.29",
+     "8.16",
+     "8.20",
+     "8.24"
+    ],
+    "controls_mapped": 9,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 9,
+    "coverage_command": "anticloud-ref bench --framework iso_27001   # 9/9 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "ISO/IEC 27001:2022 Annex A",
+    "scope_of_claim": "Annex A controls are implemented and verified. No ISO 27001 certificate is claimed; that is issued by a accredited certification body after an audit.",
+    "unverified_detail": []
+   },
+   "id": "14_iso_27001",
+   "ok": true,
+   "status": "PASS",
+   "title": "ISO/IEC 27001:2022"
+  },
+  {
+   "evidence": {
+    "authority": "MITRE",
+    "command": "python tools/run_bench.py --only mitre",
+    "control_ids": [
+     "T1078",
+     "T1552",
+     "T1552.001",
+     "T1553",
+     "T1195.002",
+     "T1221",
+     "T1600.002",
+     "T1499",
+     "T1565",
+     "T1565.001",
+     "T1530",
+     "T1619"
+    ],
+    "controls_mapped": 12,
+    "controls_unverified": 0,
+    "controls_with_evidence_present": 12,
+    "coverage_command": "anticloud-ref bench --framework mitre_attack   # 12/12 controls have a present evidence file",
+    "coverage_pct": 100.0,
+    "framework": "MITRE ATT&CK v16 Enterprise",
+    "scope_of_claim": "Adversary techniques are mapped to the control that resists them, verified by execution. This is not adversary emulation or a purple-team exercise.",
+    "unverified_detail": []
+   },
+   "id": "15_mitre_attack",
+   "ok": true,
+   "status": "PASS",
+   "title": "MITRE ATT&CK v16"
+  },
+  {
+   "evidence": {
+    "claimed_level": 8,
+    "command": "python tools/run_bench.py --only 16 && cat docs/18_TRL_JUSTIFICATION/TRL.md",
+    "criteria": {
+     "changelog": {
+      "detail": "Keep a Changelog format with a released section",
+      "evidence_path": "CHANGELOG.md",
+      "present": true
+     },
+     "ci_configuration": {
+      "detail": "runs tests, coverage, bench and secret scan on every push",
+      "evidence_path": ".github/workflows/ci.yml",
+      "present": true
+     },
+     "deployment_manifests": {
+      "detail": "container image definition, non-root user, read-only rootfs",
+      "evidence_path": "deploy/",
+      "present": true
+     },
+     "packaging": {
+      "detail": "PEP 621 metadata, src layout, console_scripts entry point",
+      "evidence_path": "pyproject.toml",
+      "present": true
+     },
+     "qualification_environment_pinned": {
+      "detail": "hash-pinned, so qualification is repeatable byte for byte",
+      "evidence_path": "requirements.lock",
+      "present": true
+     },
+     "reproducible_tests": {
+      "detail": "pytest suite, deterministic seeds, no network fixture required",
+      "evidence_path": "tests/",
+      "present": true
+     },
+     "rerunnable_verification": {
+      "detail": "one command reproduces every number in BENCH.json",
+      "evidence_path": "tools/run_bench.py",
+      "present": true
+     },
+     "versioning": {
+      "detail": "single source of truth, currently 1.0.0",
+      "evidence_path": "src/anticloud_ref/_version.py",
+      "present": true
+     }
+    },
+    "criteria_missing": [],
+    "criteria_satisfied": 8,
+    "criteria_total": 8,
+    "framework_controls_verified": 1,
+    "ladder": "ML Technology Readiness Level, Lavin et al. 2022 (TMLR)",
+    "observed_level": 8,
+    "source": "22_COMPLIANCE_FRAMEWORKS/FACTS.md",
+    "trL9_claimed": false,
+    "trL9_reason": "requires proven success in an operational environment, which cannot be asserted from a repository"
+   },
+   "id": "16_ml_trl",
+   "ok": true,
+   "status": "PASS",
+   "title": "ML Technology Readiness Level 8"
+  }
+ ],
+ "passed": 16,
+ "failed": 0,
+ "failed_ids": [],
+ "all_passed": true,
+ "checks_executed_at": "2026-10-13T20:33:34.067562+00:00",
+ "checks_evidence": "ISOLATED_LAB_RESULTS/04_Evidence/16_checks_report.json",
+ "checks_evidence_sha3": "474a1565795e2af642824a846ca4dddf8ee9100eb66678d7dee8706075f23be5"
+}

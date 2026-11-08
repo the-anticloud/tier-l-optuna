@@ -1,0 +1,88 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:c2993609-5e51-5fc1-b168-73cef6ef3fe2",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-13T20:33:29Z",
+    "component": {
+      "type": "application",
+      "name": "L_OPTUNA",
+      "version": "0684fbd74793",
+      "bom-ref": "pkg:generic/anticloud/L_OPTUNA@0684fbd74793",
+      "purl": "pkg:generic/anticloud/L_OPTUNA@0684fbd74793",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "0684fbd74793f71a01d713ba97bba8966be7a979"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/optuna/optuna.git"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "alembic",
+      "version": ">=1.5.0",
+      "purl": "pkg:pypi/alembic@1.5.0",
+      "bom-ref": "pypi/alembic@>=1.5.0"
+    },
+    {
+      "type": "library",
+      "name": "colorlog",
+      "version": "unspecified",
+      "purl": "pkg:pypi/colorlog",
+      "bom-ref": "pypi/colorlog@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "numpy",
+      "version": "unspecified",
+      "purl": "pkg:pypi/numpy",
+      "bom-ref": "pypi/numpy@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "packaging",
+      "version": ">=20.0",
+      "purl": "pkg:pypi/packaging@20.0",
+      "bom-ref": "pypi/packaging@>=20.0"
+    },
+    {
+      "type": "library",
+      "name": "sqlalchemy",
+      "version": ">=1.4.2",
+      "purl": "pkg:pypi/sqlalchemy@1.4.2",
+      "bom-ref": "pypi/sqlalchemy@>=1.4.2"
+    },
+    {
+      "type": "library",
+      "name": "tqdm",
+      "version": "unspecified",
+      "purl": "pkg:pypi/tqdm",
+      "bom-ref": "pypi/tqdm@unspecified"
+    },
+    {
+      "type": "library",
+      "name": "PyYAML",
+      "version": "unspecified",
+      "purl": "pkg:pypi/pyyaml",
+      "bom-ref": "pypi/PyYAML@unspecified"
+    }
+  ]
+}
